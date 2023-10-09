@@ -1,7 +1,59 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
 
+/*estilização das tags do header*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-image: url(assets/universo-bg.jpg);
+    background-size: cover;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a{
+    text-decoration: none;
+}
+
+i {
+    font-size: 20px;
+}
+
+i:hover {
+    color: gold;
+}
+
+/*estilização das classes do header*/
+.header-div-logo {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-div-logo-img {
+    width: 40%;
+    height: auto;
+}
+
+.header-div-span {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 16px;
+}
+
+.header-div-icon-sovial-media {
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+
 
