@@ -75,6 +75,38 @@ h2 {
     font-weight: 300;
 }
 
+button {
+    width: 70px;
+    height: 25px;
+    background-color: gold;
+    color: black;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid black;
+    outline: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: black;
+    color: gold;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin: 40px 0 20px 0;
+}
+/*estilização dos IDs main*/
+
+#iback-button {
+    visibility: hidden;
+}
+
 /*estilização das class main*/
 
 
@@ -119,4 +151,22 @@ h2 {
     font-family: 'Star Wars', sans-serif;
     color: gold;
     font-size: 16px;
+}
+
+.buttons {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer-logo {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.copyrigth {
+    font-weight: 500;
 }
