@@ -39,7 +39,7 @@ async function loadCharacters(url) {
             characterNameBg.appendChild(characterName)
             card.appendChild(characterNameBg)
             mainContent.appendChild(card)
-        })
+        });
 
         
         const nextButton = document.getElementById('inext-button')
@@ -49,13 +49,42 @@ async function loadCharacters(url) {
         backButton.disable = !responseJson.previous
 
         backButton.style.visibility = responseJson.previous? "visible" : "hidden"
-        nextButton.style.visibility = responseJson.next? "visible" : "hidden"
-
+        
         currentPageUrl = url
 
     } catch(error) {
         alert('erro ao carregar os personagens')
         console.log(error)
 
+    }
+}
+
+async function loadNextPage() {
+    if (!currentPageUrl) return;
+
+    try {
+        const response = await fetch(currentPageUrl)
+        const responseJson = await response.json()
+
+        await loadCharacters(responseJson.next)
+
+    } catch (error) {
+        console.log(error)
+        alert('Erro ai carregar a proxíma página')
+    }
+}
+
+async function loadPreviousPage() {
+    if (!currentPageUrl) return;
+
+    try {
+        const response = await fetch(currentPageUrl)
+        const responseJson = await response.json()
+
+        await loadCharacters(responseJson.previous)
+        
+    } catch (error) {
+        console.log(error)
+        alert('Erro ai carregar a pagina anterior')
     }
 }
