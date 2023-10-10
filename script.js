@@ -89,3 +89,4 @@ async function loadPreviousPage() {
         alert('Erro ai carregar a pagina anterior')
     }
 }
+

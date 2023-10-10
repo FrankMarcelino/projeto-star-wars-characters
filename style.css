@@ -11,8 +11,7 @@
 
 body {
     background-image: url(assets/universo-bg.jpg); 
-    background-repeat: no-repeat;
-    background-size:auto;
+    background-size:cover;
 }
 
 header {
@@ -93,14 +92,6 @@ button:hover {
     color: gold;
 }
 
-footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-    margin: 40px 0 20px 0;
-}
 /*estilização dos IDs main*/
 
 #iback-button {
@@ -169,4 +160,36 @@ footer {
 
 .copyrigth {
     font-weight: 500;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba( 0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+}
+
+.modal-content {
+    width: 25vw;
+    height: 70vh;
+    background-color: #0d0d0d;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 30px 10px;
+    align-items: center;
+}
+/*estilização do footer*/
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin: 40px 0 20px 0;
 }
