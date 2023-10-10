@@ -61,18 +61,19 @@ async function loadCharacters(url) {
 
 async function loadNextPage() {
     if (!currentPageUrl) return;
-
+  
     try {
-        const response = await fetch(currentPageUrl)
-        const responseJson = await response.json()
-
-        await loadCharacters(responseJson.next)
-
+      const response = await fetch(currentPageUrl)
+      const responseJson = await response.json()
+  
+      await loadCharacters(responseJson.next)
     } catch (error) {
-        console.log(error)
-        alert('Erro ai carregar a proxíma página')
+      console.log(error)
+      alert('Erro ao carregar a próxima página')
     }
-}
+  }
+
+
 
 async function loadPreviousPage() {
     if (!currentPageUrl) return;
