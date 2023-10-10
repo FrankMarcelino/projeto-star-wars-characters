@@ -7,6 +7,12 @@ window.onload = async () => {
     console.log(error);
     alert('Erro ao carregar cards!');
    } 
+
+   const nextButton = document.getElementById('inext-button')
+   const backButton = document.getElementById('iback-button')
+
+   nextButton.addEventListener('click', loadNextPage)
+   backButton.addEventListener('click', loadPreviousPage)
 };
 
 async function loadCharacters(url) {
@@ -34,6 +40,16 @@ async function loadCharacters(url) {
             card.appendChild(characterNameBg)
             mainContent.appendChild(card)
         })
+
+        
+        const nextButton = document.getElementById('inext-button')
+        const backButton = document.getElementById('iback-button')
+
+        nextButton.disable = !responseJson.next
+        backButton.disable = !responseJson.previous
+
+        backButton.style.visibility = responseJson.previous? "visible" : "hidden"
+        nextButton.style.visibility = responseJson.next? "visible" : "hidden"
 
         currentPageUrl = url
 
