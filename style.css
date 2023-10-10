@@ -185,6 +185,22 @@ button:hover {
     padding: 30px 10px;
     align-items: center;
 }
+
+.character-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-position: 50% 10%;
+    background-size: cover;
+}
+
+.character-details {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    color: gold;
+}
+
 /*estilização do footer*/
 footer {
     width: 100%;

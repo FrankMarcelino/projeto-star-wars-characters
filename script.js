@@ -42,6 +42,44 @@ async function loadCharacters(url) {
             card.onclick = () => {
                 const modal = document.getElementById('imodal')
                 modal.style.visibility = "visible"
+
+                const modalContent = document.getElementById('imodal-content')
+                modalContent.innerHTML = ''
+
+                const characterImage = document.createElement('div')
+                characterImage.style.backgroundImage = `url('https://starwars-visualguide.com/assets/img/characters/${character.url.replace(/\D/g, "")}.jpg')`
+                
+                characterImage.className = "character-image"
+
+                const name = document.createElement('span')
+                name.className = "character-details"
+                name.innerText = `Nome: ${character.Name}`
+
+                const characterHeight = document.createElement('span')
+                characterHeight.className = "character-details"
+                characterHeight.innerText = `Altura: ${character.Height}`
+
+                const mass = document.createElement('span')
+                mass.className = "character-details"
+                mass.innerText = `Peso: ${character.mass}`
+
+                const eyeColor = document.createElement('span')
+                eyeColor.className = "character-details"
+                eyeColor.innerText = `cor dos olhos: ${character.eye_color}`
+
+                const birthYear = document.createElement('span')
+                birthYear.className = "character-details"
+                birthYear.innerText = `Nascimento: ${character.birth_Year}`
+
+              
+
+                modalContent.appendChild(characterImage)
+                modalContent.appendChild(name)
+                modalContent.appendChild(characterHeight)
+                modalContent.appendChild(mass)
+                modalContent.appendChild(eyeColor)
+                modalContent.appendChild(birthYear)
+             
             }
 
             mainContent.appendChild(card)
