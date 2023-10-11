@@ -57,19 +57,19 @@ async function loadCharacters(url) {
 
                 const characterHeight = document.createElement('span')
                 characterHeight.className = "character-details"
-                characterHeight.innerText = `Altura: ${character.Height}`
+                characterHeight.innerText = `Altura: ${convertHeight(character.height)}`
 
                 const mass = document.createElement('span')
                 mass.className = "character-details"
-                mass.innerText = `Peso: ${character.mass}`
+                mass.innerText = `Peso: ${convertMass(character.mass)}`
 
                 const eyeColor = document.createElement('span')
                 eyeColor.className = "character-details"
-                eyeColor.innerText = `cor dos olhos: ${character.eye_color}`
+                eyeColor.innerText = `cor dos olhos: ${convertEyeColor(character.eye_color)}`
 
                 const birthYear = document.createElement('span')
                 birthYear.className = "character-details"
-                birthYear.innerText = `Nascimento: ${character.birth_Year}`
+                birthYear.innerText = `Nascimento: ${convertBirthYear(character.birth_year)}`
 
               
 
@@ -138,4 +138,45 @@ function hideModal() {
     const modal = document.getElementById('imodal')
     modal.style.visibility = "hidden"
 
+}
+
+function convertEyeColor(eyeColor) {
+    const cores = {
+        blue: "azul",
+        brown: "castanho",
+        green: "verde",
+        yellow: "amarelo",
+        black: "preto",
+        pink: "rosa",
+        red: "vermelho",
+        orange: "laranja",
+        hazel: "avela",
+        unknown: "desconhecida"
+    };
+
+    return cores[eyeColor.toLowerCase()] || eyeColor;
+}
+
+function convertHeight(height) {
+    if (height === "unknown") {
+        return "desconhecida"
+    }
+
+    return (height / 100).toFixed(2);
+}
+
+function convertMass(mass) {
+    if (mass === "unknown") {
+        return "desconhecido"
+    }
+
+    return `${mass} Kg`
+}
+
+function convertBirthYear(birthYear) {
+    if (birthYear === "unknown") {
+        return "desconhecido"
+    }
+
+    return birthYear
 }
